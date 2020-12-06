@@ -1,24 +1,23 @@
-var colors_old = ["#f4b84d", "#ff449b", "#76317c", "#3baadf",
-             "#f4b84d", "#ff449b", "#76317c", "#3baadf","#3baadf"];
-var prizes = ["Article1", "Rs. 1000 in PB 1", "Multiplier Ticket 1", "Stackup Ticket 1",
-                   "Rs. 20 in PB 2", "Rs. 1000 in PB 2", "Multiplier Ticket 2", "Stackup Ticket 2","article n"];
 
-var colors =["#1f77b4","#aec7e8",
-    "#ff7f0e",
-    "#ffbb78",
-    "#2ca02c",
-    "#98df8a",
-    "#d62728",
-    "#ff9896",
-    "#9467bd",
-    "#c5b0d5",
-    "#8c564b",
-    "#c49c94",
-    "#e377c2",
-    "#f7b6d2",
-    "#7f7f7f",
-    "#c7c7c7",
-    "#bcbd22" ]
+var prizes = ["Climate Change", "Extinction", "Food Shortage", "Forest Fires",
+"Lack Of Education", "Planet B", "Poverty", "Racism","Water Bodies", "Ethnic Cleansing", "Animal testing","Child Abuse, Marriage", "Terrorism, Shooting", "Resource Depletion", "Humanitarian Aid","Human Rights"];
+
+var colors =["#5E4955","#C6DDF0",
+    "#204B57",
+    "#282F44",
+    "#453A49",
+    "#6D3B47",
+    "#7AA095",
+    "#62466B",
+    "#618B4A",
+    "#2D3047",
+    "#A799B7",
+    "#C9ADA1",
+    "#4D6A6D",
+    "#AA6373",
+    "#125E8A",
+    "#004F2D" ]
+
 var startAngle = 0*Math.PI/180;
 var arc = (2 * Math.PI) / colors.length;
 var spinTimeout = null;
@@ -31,37 +30,68 @@ var textColor = '#fff';
 var ctx;
 var ans = document.getElementById('ans');
 
+// function to load the contents of the file
+function loadFile(filePath) {
+  var result = null;
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("GET", filePath, false);
+  xmlhttp.send();
+  if (xmlhttp.status==200) {
+    result = xmlhttp.responseText;
+  }
+  return result;
+}
+
+function loadFile2(filePath){
+  var client = new XMLHttpRequest();
+  var fileText= "None";
+  client.open('GET', filePath);
+  client.onreadystatechange = function() {
+      fileText = client.responseText;
+      alert(fileText);
+  }
+  return fileText;
+}
+
 // third outermost circle
 
+function loadFile3(filePath){
+  $.get(filePath, function(data) {
+    alert(data);
+    return data;
+  });
+  return 'None';
+
+}
    
 function drawRouletteWheel() {
   var canvas = document.getElementById("canvas");
   if (canvas.getContext) {
-    var outsideRadius = 200;
-    var textRadius = 120;
+    var outsideRadius = 220;
+    var textRadius = 130;
     var insideRadius = 40;
    
     ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,500,500);
-    ctx.font = 'bold 18px Helvetica, Arial';
+    ctx.font = '16px Helvetica, Arial';
    
     for(var i = 0; i < colors.length; i++) {
       var angle = startAngle + i * arc;
       ctx.beginPath();
-      ctx.strokeStyle = "#412b6d";
+      ctx.strokeStyle = "#000000";
       ctx.lineWidth = 16;
       ctx.arc(250, 250, 200, angle, angle + arc, false);
       ctx.stroke();
       ctx.fillStyle = colors[i];
       ctx.beginPath();
       ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
-      ctx.strokeStyle = '#412b6d';
+      ctx.strokeStyle = '#000000';
       ctx.lineWidth = 8;
       ctx.lineTo(250, 250);
       if ( i === colors.length - 1) {
         ctx.beginPath();
         ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
-        ctx.strokeStyle = '#412b6d';
+        ctx.strokeStyle = '#000000';
         ctx.lineWidth = 4;
         ctx.lineTo(250, 250);
         ctx.fill();
@@ -71,7 +101,7 @@ function drawRouletteWheel() {
          ctx.stroke(); 
       }
       ctx.beginPath();
-      ctx.strokeStyle = '#412b6d';
+      ctx.strokeStyle = '#000000';
       ctx.arc(250, 250, insideRadius, angle, angle + arc, false);
       ctx.lineWidth = 5;
       ctx.stroke();
@@ -139,7 +169,11 @@ function stopRotateWheel() {
   var degrees = startAngle * 180 / Math.PI + 90;
   var arcd = arc * 180 / Math.PI;
   var index = Math.floor((360 - degrees % 360) / arcd);
-  ans.textContent = prizes[index];
+  //ans.textContent = prizes[index];
+  articleContent  = loadFile3('./articles/article1.html');
+  console.log("index  contents are  = "+articleContent);
+
+  ans.textContent = articleContent;
   // ctx.save();
   // ctx.font = 'bold 30px Helvetica, Arial';
   // var text = prizes[index]
