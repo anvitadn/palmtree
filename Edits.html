@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="./mystyle.css">
+</head>
+<body>
+
+
+<div class="jumbotron text-center">
+  <h1>The Million Dollar Question: Do We Have A Future?</h1>
+  <p>Can You Promise Us A Certain Future? No, no you cannot.</p> 
+  <button type="button" onclick="spin();" class="btn btn-primary">Click Here</button>
+</div>
+  
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="" class="span6" style="float: none; margin: 0 auto;">
+      <h3>Story 1</h3>
+
+      <canvas id="canvas" width="500" height="500"></canvas>
+      <img src="https://massets1.9stacks.com/assets/pwa-icons/spin-the-wheel/spinthewheel_arrow.svg" width="50" height="50" id="arrow">
+      
+      <img src="https://massets1.9stacks.com/assets/pwa-icons/spin-the-wheel/9stacks_purple.svg" width="30" height="30" id="center-logo">
+      
+      <div id="ans"></div>
+
+
+    </div>
+  </div> <!-- row ending -->
+</div>
+
+<script src="./js/myflywheel.js"></script>
+
+</body>
+</html>

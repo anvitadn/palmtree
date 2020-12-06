@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./images/bg2.jpg'), linear-gradient(to bottom, #a3b9d0, #8644db);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+img {
+    display: none;
+}
