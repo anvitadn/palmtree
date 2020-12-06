@@ -1,6 +1,13 @@
 
-var prizes = ["Climate Change", "Extinction", "Food Shortage", "Forest Fires",
-"Lack Of Education", "Planet B", "Poverty", "Racism","Water Bodies", "Ethnic Cleansing", "Animal testing","Child Abuse, Marriage", "Terrorism, Shooting", "Resource Depletion", "Humanitarian Aid","Human Rights"];
+var prizes = ["Climate Change", 
+               "Extinction", 
+               "Food Shortage", 
+               "Forest Fires",
+"Lack Of Education", 
+"Planet B", 
+"Poverty",
+ "Racism",
+ "Water Bodies", "Ethnic Cleansing", "Animal testing","Child Abuse, Marriage", "Terrorism, Shooting", "Resource Depletion", "Humanitarian Aid","Human Rights"];
 
 var colors =["#5E4955","#C6DDF0",
     "#204B57",
