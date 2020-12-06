@@ -56,12 +56,12 @@ function loadFile2(filePath){
 // third outermost circle
 
 function loadFile3(filePath){
-  $.get(filePath, function(data) {
-    alert(data);
-    return data;
-  });
-  return 'None';
+  var returnedData = null;
 
+  $.get(filePath, function(data) {
+    returnedData  = data;
+    return returnedData;
+  });
 }
    
 function drawRouletteWheel() {
@@ -170,10 +170,17 @@ function stopRotateWheel() {
   var arcd = arc * 180 / Math.PI;
   var index = Math.floor((360 - degrees % 360) / arcd);
   //ans.textContent = prizes[index];
-  articleContent  = loadFile3('./articles/article1.html');
-  console.log("index  contents are  = "+articleContent);
+  //articleContent  = loadFile3('./articles/article1.html');
+  
+  $.get('./articles/article'+index+'.html', function(data) {
+    returnedData  = data;
+    console.log("index  contents are 2 = "+returnedData);
+    $("#ans").html(returnedData);
+  });
+ 
+  
 
-  ans.textContent = articleContent;
+  
   // ctx.save();
   // ctx.font = 'bold 30px Helvetica, Arial';
   // var text = prizes[index]
