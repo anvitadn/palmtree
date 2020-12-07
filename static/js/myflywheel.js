@@ -70,17 +70,29 @@ function loadFile3(filePath){
     return returnedData;
   });
 }
+
+ // Bug Fix: Draw the arrow initially 
+
+function drawArrow(ctx,outsideRadius){
+  var arrowImage1 = document.getElementById('arrow');
+  ctx.beginPath();
+  ctx.drawImage(arrowImage1, 250 - 4 - 25, 250 - (outsideRadius + 5) - 25, 50, 50);
+  ctx.restore();
+}
+
    
 function drawRouletteWheel() {
   var canvas = document.getElementById("canvas");
   if (canvas.getContext) {
     var outsideRadius = 220;
-    var textRadius = 130;
+    var textRadius = 120;
     var insideRadius = 40;
    
     ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,500,500);
     ctx.font = '16px Helvetica, Arial';
+
+    drawArrow(ctx,outsideRadius);
    
     for(var i = 0; i < colors.length; i++) {
       var angle = startAngle + i * arc;
@@ -95,7 +107,10 @@ function drawRouletteWheel() {
       ctx.strokeStyle = '#000000';
       ctx.lineWidth = 8;
       ctx.lineTo(250, 250);
-      if ( i === colors.length - 1) {
+      
+      // Fix for the last arc outshape - Start
+      
+      /* if ( i === colors.length - 1) {
         ctx.beginPath();
         ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
         ctx.strokeStyle = '#000000';
@@ -106,7 +121,13 @@ function drawRouletteWheel() {
       } else {
          ctx.fill();
          ctx.stroke(); 
-      }
+      }*/
+
+      ctx.fill();
+      ctx.stroke(); 
+      
+      // Fix for the last arc outshape -  End
+
       ctx.beginPath();
       ctx.strokeStyle = '#000000';
       ctx.arc(250, 250, insideRadius, angle, angle + arc, false);
@@ -181,7 +202,7 @@ function stopRotateWheel() {
   
   $.get('./articles/article'+index+'.html', function(data) {
     returnedData  = data;
-    console.log("index  contents are 2 = "+returnedData);
+    //console.log("index  contents are 2 = "+returnedData);
     $("#ans").html(returnedData);
   });
  
