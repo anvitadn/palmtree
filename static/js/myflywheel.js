@@ -185,7 +185,8 @@ function spin() {
 }
 
 function rotateWheel() {
-  spinTime += 30;
+  spinTime += 30 + Math.floor(Math.random() * 10);
+  console.log(spinTime);
   if(spinTime >= spinTimeTotal) {
     stopRotateWheel();
     return;
