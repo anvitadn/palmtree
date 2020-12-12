@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-  <title>The Million Dollar Question !</title>
+  <title>The Million Dollar Question!</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,19 +11,27 @@
   <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 
   <link rel="stylesheet" href="./mystyle.css">
+
 </head>
 <body>
+  
+  <button onclick="topFunction();" id="scrollBtn" title="Go to top">Back To Top</button>
 
 <div class="container-fluid">
 
   <div class="row justify-content-center">
    <div class="col text-center">
       <div class="jumbotron1 text-center">
-        <h1>The Million Dollar Question: Do we have a future ?</h1>
-        <p>Can you promise us a future ? No, no you cannot !</p> 
-        <img src="./images/logo_main.jpg" width="20" height="20"/>
+        <h1 style="color:black;">The Million Dollar Question: Do we have a future ?</h1>
+        <!--<h3 style="color:black">Can you promise us a future ? No, no you cannot !</h3> -->
+        <h3>Spin the wheel and discover!</h3>
+        <!-- <img src="./images/logo_main.jpg" class="rounded mx-auto d-block" height="120" width="120" alt="...">--> 
+        <br/>
+    
         <button type="button" onclick="spin();" class="btn btn-primary">Click to spin</button>
       </div>
+
+      
     </div> <!-- column end -->
   </div> <!-- row ending -->
   
@@ -41,8 +49,9 @@
     <div class="col text-center">
 
     <!-- results -->
-
+      
       <div id="ans"></div>
+      
       
     </div>
   </div> <!-- row ending -->
@@ -50,7 +59,27 @@
 </div>
 
 
-
+<script>
+  //Get the button
+  var mybutton = document.getElementById("scrollBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script> 
 
 
 <script src="/static/js/myflywheel.js"></script>
