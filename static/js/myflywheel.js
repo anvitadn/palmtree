@@ -210,7 +210,6 @@ function stopRotateWheel() {
   //articleContent  = loadFile3('./articles/article1.html');
   
   
-
   $.get('./articles/article'+index+'.html', function(data) {
     returnedData  = data;
     //console.log("index  contents are 2 = "+returnedData);
