@@ -12,6 +12,10 @@ img {
     display: none;
 }
 
+myparagraph {
+    padding-left: 8px;
+}
+
 /* The scroll up button */
 
 #scrollBtn {

@@ -16,21 +16,22 @@ var prizes = [
   "Resource Depletion", 
   "Humanitarian Aid",
   "Human Rights"];
-var colors =["#5E4955","#C6DDF0",
-    "#204B57",
-    "#282F44",
-    "#453A49",
-    "#6D3B47",
-    "#7AA095",
-    "#62466B",
-    "#618B4A",
-    "#2D3047",
-    "#A799B7",
-    "#C9ADA1",
-    "#4D6A6D",
-    "#AA6373",
-    "#125E8A",
-    "#004F2D" ]
+var colors =["#DE6897",
+   "#633CCD",
+    "#A117A6",
+    "#66A6F4",
+    "#70D7BD",
+    "#4AD388",
+    "#3ABB8E",
+    "#E7D473",
+    "#DEC43F",
+    "#FF9933",
+    "#F46F3E",
+    "#F3602B",
+    "#C53041",
+    "#ECOB43",
+    "#F4154D",
+    "#AF0832" ]
 
 var startAngle = 0*Math.PI/180;
 var arc = (2 * Math.PI) / colors.length;
