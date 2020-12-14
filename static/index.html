@@ -17,51 +17,62 @@
   
   <button onclick="topFunction();" id="scrollBtn" title="Go to top">Back To Top</button>
 
-<div class="container-fluid">
 
-  <div class="row justify-content-center">
-   <div class="col text-center">
-      <div class="jumbotron1 text-center">
-        <h1 style="color:navy;">The Million Dollar Question: Do we have a future ?</h1>
-        <!--<h3 style="color:black">Can you promise us a future ? No, no you cannot !</h3> -->
-        <h3>Spin the wheel and uncover!</h3>
-        <h5 style="color:darkgreen"> Find the article with a <a style="color:firebrick;"><b>hidden code</b></a> and claim your reward! 
-          <img src="/static/images/trophy2.gif" style="display:inline" alt="Trophy" width="45" height="45"></h5>
-       
-        <!-- <img src="./images/logo_main.jpg" class="rounded mx-auto d-block" height="120" width="120" alt="...">--> 
-        <br/>
-    
-        <button type="button" onclick="spin();" class="btn btn-info">Click to spin</button> <!-- was previously class="btn btn-primary" -->
-      </div>
 
+
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+      <div class="col text-center">
+          <div class="jumbotron1 text-center">
+            <h1 style="color:navy;">The Million Dollar Question: Do we have a future ?</h1>
+            <!--<h3 style="color:black">Can you promise us a future ? No, no you cannot !</h3> -->
+            <h3>Spin the wheel and uncover!</h3>
+            <h5 style="color:darkgreen"> Find the article with a <a style="color:firebrick;"><b>hidden code</b></a> and claim your reward! 
+              <img src="/static/images/trophy2.gif" style="display:inline" alt="Trophy" width="45" height="45"></h5>
+          
+            <!-- <img src="./images/logo_main.jpg" class="rounded mx-auto d-block" height="120" width="120" alt="...">--> 
+            <br/>
+        
+            <button type="button" onclick="spin();" class="btn btn-info">Click to spin</button> <!-- was previously class="btn btn-primary" -->
+          </div>
+
+          
+        </div> <!-- column end -->
+      </div> <!-- row ending -->
       
-    </div> <!-- column end -->
-  </div> <!-- row ending -->
+
+
+      <div class="row justify-content-center">
+        <div class="col text-center">
+          <canvas id="canvas" width="530" height="530" style="padding-top:20px;"></canvas>
+          <img src="/static/images/arrow5.png" width="50" height="50" id="arrow">
+          <img src="/static/images/central logo.jpg" width="30" height="30" id="center-logo">
+        </div>
+      </div> <!-- row ending -->
+
+      <div class="row justify-content-center">
+        <div class="col text-center">
+
+        <!-- results -->
+          
+          <div id="ans"></div>
+          
+          
+        </div>
+      </div> <!-- row ending -->
+
+    </div>
+ 
+<!--  
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <a class="navbar-brand" href="#">Fixed bottom</a>
+  </nav> -->
+
+<footer class="fixed-bottom">
+
+    <a href="https://mdbootstrap.com/"> © 2020 Copyright:  dowehaveafeature.org</a>
+</footer>
   
-
-
-  <div class="row justify-content-center">
-    <div class="col text-center">
-      <canvas id="canvas" width="530" height="530" style="padding-top:20px;"></canvas>
-      <img src="/static/images/arrow5.png" width="50" height="50" id="arrow">
-      <img src="/static/images/central logo.jpg" width="30" height="30" id="center-logo">
-    </div>
-  </div> <!-- row ending -->
-
-  <div class="row justify-content-center">
-    <div class="col text-center">
-
-    <!-- results -->
-      
-      <div id="ans"></div>
-      
-      
-    </div>
-  </div> <!-- row ending -->
-
-</div>
-
-
 <script>
   //Get the button
   var mybutton = document.getElementById("scrollBtn");
